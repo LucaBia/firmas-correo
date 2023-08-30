@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        @font-face {
+            font-family: 'CocogoosePro';
+            src: url('./CocogoosePro-Regular.otf');
+            font-weight: bold;
+        }
+
+        @font-face {
+            font-family: 'CocogooseProLight';
+            src: url('./CocogoosePro-Light.otf');
+        }
+
+        @font-face {
+            font-family: 'Karla';
+            src: url('./Karla-Regular.ttf');
+        }
+
+        #formContainer {
+            position: relative;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            width: 450px;
+            height: 200px;
+            margin-top: 5%;
+            /* left: 40%; */
+        }
+
+        .mainC {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            margin-top: 2%;
+        }
+
+        .allFields {
+            /* background-color: antiquewhite; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: fit-content;
+        }
+
+        .image {
+            display: block;
+            /* width: 40%; */
+            height: auto;
+            border: solid 1px black;
+        }
+
+        .fields {
+            position: absolute;
+            top: 50%;
+            left: 44%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .fieldNombre {
+            position: absolute;
+            top: 0%;
+            left: 44%;
+            font-family: 'CocogoosePro', sans-serif;
+            text-transform: uppercase;
+            font-size: 18px;
+            color: #0d1c43;
+        }
+
+        .fieldPuesto {
+            position: absolute;
+            top: 15%;
+            left: 46%;
+            font-family: 'CocogooseProLight', sans-serif;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #0d1c43;
+        }
+
+        .fieldEmail {
+            position: absolute;
+            top: 28%;
+            left: 46%;
+            font-family: 'Karla', sans-serif;
+            font-size: 12px;
+            color: #0d1c43;
+        }
+
+        .fieldCelular {
+            position: absolute;
+            top: 38%;
+            left: 46%;
+            font-family: 'Karla', sans-serif;
+            font-size: 12px;
+            color: #0d1c43;
+        }
+
+        .fieldWhatsapp {
+            position: absolute;
+            top: 47%;
+            left: 46%;
+            font-family: 'Karla', sans-serif;
+            font-size: 12px;
+            color: #0d1c43;
+        }
+
+        .fieldUbicacion {
+            position: absolute;
+            top: 57%;
+            left: 46%;
+            font-family: 'Karla', sans-serif;
+            font-size: 12px;
+            color: #0d1c43;
+        }
+        /* .... */
+
+        .fieldNombre2{
+            font-family: 'CocogoosePro', sans-serif;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: #0d1c43;
+        }
+
+        .fieldPuesto2{
+            font-family: 'CocogooseProLight', sans-serif;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: #0d1c43;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mainC">
+        <div class="allFields">
+            <div>
+                <p>Nombre:</p>
+                <input class="formField" id="nombre" type="text" style="left: 100px; top: 150px;">
+            </div>
+            <div>
+                <p>Puesto:</p>
+                <input class="formField" id="puesto" type="text" style="left: 100px; top: 150px;">
+            </div>
+            <div>
+                <p>Email:</p>
+                <input class="formField" id="email" type="text" style="left: 100px; top: 150px;">
+            </div>
+            <div>
+                <p>Oficina:</p>
+                <input class="formField" id="celular" type="text" style="left: 100px; top: 150px;">
+            </div>
+            <div>
+                <p>Celular:</p>
+                <input class="formField" id="whatsapp" type="text" style="left: 100px; top: 150px;">
+            </div>
+            <div>
+                <p>Ubicación:</p>
+                <input class="formField" id="ubicacion" type="text" style="left: 100px; top: 150px;">
+            </div>
+        </div>
+
+        <button id="generar">Generar Firma</button>
+        <button id="downloadButton" disabled>Descargar Imagen</button>
+        
+        <div id="formContainer" class="formContainer">
+            <img id="backgroundImage" class="image" src="https://i.ibb.co/GkyTS5N/template.png" alt="Imagen de Fondo">
+            <p id="resNombre" class="fieldNombre">Nombre</p>
+            <p id="resPuesto" class="fieldPuesto">Puesto</p>
+            <p id="resEmail" class="fieldEmail">Email</p>
+            <p id="resWhatsapp" class="fieldWhatsapp">Oficina</p>
+            <p id="resCelular" class="fieldCelular">Celular</p>
+            <p id="resUbicacion" class="fieldUbicacion">Ubicacion</p>
+            <!-- <div class="fields">
+            </div> -->
+            <!-- <div class="testt">
+            </div> -->
+        </div>
+
+        <!-- <div id="formContainer2">
+            <div class="firma">
+                <div>
+                    <img src="./logo.png" />
+                </div>
+                <div></div>
+                <div>
+                    <p id="resNombre" class="fieldNombre2">Nombre</p>
+                    <p id="resPuesto" class="fieldPuesto2">Puesto</p>
+                    <p id="resEmail" class="fieldEmail2">Email</p>
+                    <p id="resWhatsapp" class="fieldWhatsapp2">Oficina</p>
+                    <p id="resCelular" class="fieldCelular2">Celular</p>
+                    <p id="resUbicacion" class="fieldUbicacion2">Ubicacion</p>
+                    <p>www.cendis.com.gt</p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+
+    <script>
+        const generar = document.getElementById('generar');
+
+        const resNombre = document.getElementById('resNombre');
+        const resPuesto = document.getElementById('resPuesto');
+        const resEmail = document.getElementById('resEmail');
+        const resWhatsapp = document.getElementById('resWhatsapp');
+        const resCelular = document.getElementById('resCelular');
+        const resUbicacion = document.getElementById('resUbicacion');
+
+        const nombre = document.getElementById('nombre');
+        const puesto = document.getElementById('puesto');
+        const email = document.getElementById('email');
+        const whatsapp = document.getElementById('whatsapp');
+        const celular = document.getElementById('celular');
+        const ubicacion = document.getElementById('ubicacion');
+
+        generar.addEventListener('click', function() {
+            // Obtener el valor del campo de entrada
+            const inpNombre = nombre.value;
+            const inpPuesto = puesto.value;
+            const inpEmail = email.value;
+            const inpWhatsapp = whatsapp.value;
+            const inpCelular = celular.value;
+            const inpUbicacion = ubicacion.value;
+
+            // Mostrar el valor en el elemento <p>
+            resNombre.textContent = inpNombre;
+            resPuesto.textContent = inpPuesto;
+            resEmail.textContent = inpEmail;
+            resWhatsapp.textContent = '(502) ' + inpWhatsapp;
+            resCelular.textContent = '(502) ' + inpCelular;
+            resUbicacion.textContent = inpUbicacion;
+
+            document.getElementById("downloadButton").disabled = false;
+        });
+
+
+// 450x200
+        document.getElementById('downloadButton').addEventListener('click', function () {
+
+
+            const formContainer = document.getElementById('formContainer');
+            const imageElement = formContainer.querySelector('.image'); // Selecciona la imagen
+            const fieldsContainer = formContainer.querySelector('.fields'); // Selecciona el contenedor de campos
+
+            // Configurar las opciones para html2canvas
+            const options = {
+                useCORS: true // Habilitar el uso de CORS
+            };
+
+            // Capturar el contenido del formContainer
+            html2canvas(formContainer, options).then(function(canvas) {
+                const imgData = canvas.toDataURL('image/jpeg');
+                const a = document.createElement('a');
+                a.href = imgData;
+                a.download = 'formulario.jpg';
+                a.click();
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+</body>
+</html>
